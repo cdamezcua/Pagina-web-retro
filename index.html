@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>MECANO</title>
+    <style>
+        * {
+            color: #e3d8d8
+        }
+        .titulo, .barraFinal {
+            background-image: linear-gradient(
+            to right,
+            orangered,
+            orange,
+            gold,
+            lightgreen,
+            cyan,
+            dodgerblue,
+            mediumpurple,
+            hotpink,
+            orangered);
+            background-size: 110vw;
+        }
+        .subtitulo {
+            color:red;
+        }
+        form {
+            /* Centrar el formulario en la página */
+            max-width: 350px;
+            /* Esquema del formulario */
+            padding: 1em;
+            border: 4px solid #ff00dd;
+            border-radius: 1em;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        form li + li {
+            margin-top: 1em;
+        }
+        label {
+            /* Tamaño y alineación uniforme */
+            display: inline-block;
+            width: 90px;
+            text-align: right;
+        }
+        input,
+        textarea {
+            /* Para asegurarse de que todos los campos de texto tienen la misma configuración de letra
+                Por defecto, las áreas de texto tienen un tipo de letra monoespaciada */
+            font: 1em sans-serif;
+
+            /* Tamaño uniforme del campo de texto */
+            width: 200px;
+            box-sizing: border-box;
+
+            /* Hacer coincidir los bordes del campo del formulario */
+            border: 1px solid #999;
+        }
+
+        input:focus,
+        textarea:focus {
+            /* Destacado adicional para elementos que tienen el cursor */
+            border-color: #000;
+        }
+
+        textarea {
+            /* Alinear los campos de texto multilínea con sus etiquetas */
+            vertical-align: top;
+
+            /* Proporcionar espacio para escribir texto */
+            height: 5em;
+        }
+
+        .button {
+            /* Alinear los botones con los campos de texto */
+            padding-left: 90px; /* mismo tamaño que los elementos de la etiqueta */
+        }
+
+        button {
+            /* Este margen adicional representa aproximadamente el mismo espacio que el espacio
+                entre las etiquetas y sus campos de texto */
+            margin-left: .5em;
+        }
+    </style>
+</head>
+<body style="background-image: url('gifs/estrellas.gif');">
+    <div class="container">   
+        <div class="row content">
+            <div class="col-sm-12 text-center titulo">
+                <h1 class="titulo" style="color: #000;">MECANO</h1>
+            </div>
+        </div> 
+
+        <div class="row content">
+            <div class="col-sm-9">
+                <div class="row content">
+                    <div class="col-sm-12 text-left"> 
+                        <p>Mecano fue un grupo español de música pop compuesto por los hermanos Nacho, José María y Ana Torroja, que tuvo gran éxito en la década de 1980 y 1990.</p>
+                        <p>El grupo se disolvió en 1992 después de una exitosa gira de despedida, pero su música sigue siendo recordada y apreciada por muchos fanáticos en todo el mundo. Mecano fue uno de los grupos más influyentes y populares de la música pop en español, y su legado musical sigue inspirando a nuevas generaciones de artistas.</p>
+                    </div>
+                </div>
+                <div class="row content">
+                    <div class="col-sm-3 sidenav" align="center">
+                        <img src="gifs/estrella.gif" alt="">
+                    </div>
+                    <div class="col-sm-6 sidenav" align="center">
+                        <h2 class="subtitulo">Éxitos de hoy y siempre</h2>
+                    </div>
+                    <div class="col-sm-3 sidenav" align="center">
+                        <img src="gifs/estrella.gif" alt="">
+                    </div>
+                </div>
+                <div class="row content">
+                    <div class="col-sm-4 sidenav" align="center">
+                        <img src="imagenes/mujerContraMujer.png" class="img-fluid" alt="">
+                        <audio controls>
+                            <source src="audios/mujerContraMujer.mp3">
+                        </audio>
+                    </div>
+                    <div class="col-sm-4 sidenav" align="center">
+                        <img src="imagenes/cruzDeNavajas.png" class="img-fluid" alt="">
+                        <audio controls>
+                            <source src="audios/cruzDeNavajas.mp3">
+                        </audio>
+                    </div>
+                    <div class="col-sm-4 sidenav" align="center">
+                        <img src="imagenes/hijoDeLaLuna.png" class="img-fluid" alt="">
+                        <audio controls>
+                            <source src="audios/hijoDeLaLuna.mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <h2 style="color: cyan">Cómpra de boletos</h2>
+                <img src="gifs/tickets.gif" class="img-fluid" alt="">
+                <p><b>Sábado, mayo 13, 2023</b></p>
+                <p>20:00</p>
+                <p>Auditorio Baluarte - Sala Principal, Pamplona, España</p>
+                <p>Aforo: 1560</p>
+                <div id="botonCompraDeBoletos">
+                    <button style="color: #000;" type="button" onclick="loadJPG()">Boletos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row content">
+            <div class="col-sm-6">
+                <h2 class="subtitulo" style="color:mediumseagreen">Comentarios</h2>
+                <form id="comment-form">
+                    <ul>
+                        <li>
+                            <label for="name">Nombre:</label>
+                            <input type="text" style="color: #000;" id="name" name="name" required></li>
+                        </li>
+                        <li>
+                            <label for="comment">Comentario:</label>
+                            <textarea style="color: #000;" id="comment" name="comment" required></textarea>
+                        </li>
+                        <li>
+                            <button style="color: #000;" type="submit">Enviar</button>
+                        </li>
+                    </ul>
+                  </form>
+            </div>
+            <div class="col-sm-6">
+                <div class="row content">
+                    <h2 style="text-align: center; color:mediumseagreen;">Patrocinadores oficiales</h2>
+                </div>
+                <div class="row content">
+                    <div class="col-sm-6">
+                        <img class="img-fluid" src="imagenes/banamex.jpeg" alt="">
+                    </div>
+                    <div class="col-sm-6">
+                        <img class="img-fluid" src="imagenes/cocaCola.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="row content">
+            <div class="col-sm-12">
+                <div id="comments">
+                    <script>
+                        $(function() {
+                            // Manejar el envío del formulario
+                            $('#comment-form').submit(function(event) {
+                            event.preventDefault(); // prevenir el envío por defecto
+                            var name = $('#name').val();
+                            var comment = $('#comment').val();
+                            var html = '<div class="comment"><strong>' + name + ':</strong> ' + comment + '</div>';
+                            $('#comments').append(html); // agregar el comentario al contenedor
+                            $('#name, #comment').val(''); // limpiar los campos del formulario
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row content">
+            <div class="col-sm-12">
+                <div class="barraFinal">
+                    <p style="color: #000;text-align: center;">Carlos David Amezcua Canales 2023. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
